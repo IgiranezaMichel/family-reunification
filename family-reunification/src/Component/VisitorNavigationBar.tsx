@@ -1,8 +1,21 @@
+import {Link} from 'react-router-dom'
 export const VisitorNavigationBar=()=>{
     return(
         <>
-            <nav className="navbar navbar-expand-sm " style={{backgroundColor:'#00BFFF'}}>
-                <a className="navbar-brand" href="#">Navbar</a>
+            <nav
+                className="navbar navbar-expand-md navbar-dark sticky-top"
+                style={{backgroundColor:'#00BFFF'}}>
+                <Link  className="navbar-brand"to={'/'}>
+                    <img src="/Visitor/unhcr.jpeg" alt="" className="rounded-circle"/>
+                </Link>
+               <div>
+               <span className="display-5 d-block fw-bolder text-light">
+                    UNHCR
+                </span>
+                <span className="text-light fw-bold">
+                The Refugee Agency
+                </span>
+               </div>
                 <button
                     className="navbar-toggler d-lg-none"
                     type="button"
@@ -11,32 +24,18 @@ export const VisitorNavigationBar=()=>{
                     aria-controls="collapsibleNavId"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
-                    
-                ></button>
+                ><i className="bi bi-three-dots"></i></button>
                 <div className="collapse navbar-collapse" id="collapsibleNavId">
                     <ul className="navbar-nav me-auto mt-2 mt-lg-0">
-                        <li className="nav-item">
-                            <a className="nav-link active" href="#" aria-current="page"
-                                >Home <span className="visually-hidden">(current)</span></a
-                            >
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Link</a>
-                        </li>
-          
                     </ul>
-                    <form className="d-flex my-2 my-lg-0">
-                        <input
-                            className="form-control me-sm-2"
-                            type="text"
-                            placeholder="Search"
-                        />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                            Search
-                        </button>
-                    </form>
+                    <div className="d-flex my-2 my-lg-0 text-white">
+                    <Link to={'/'} className="nav-link fw-bold m-4  border-bottom border-3">Home</Link>
+                        <Link key={0} to={'/contact-us'} className="nav-link fw-bold m-4">Contact us</Link>
+                        <Link to={'/'} className="nav-link fw-bold m-4">Login</Link>
+                        <Link to={'/'} className="nav-link fw-bold m-4">Signup</Link>
+                    </div>
                 </div>
-            </nav> 
+            </nav>
         </>
     )
 }
