@@ -1,12 +1,17 @@
-import './App.css'
-import { VisitorNavigationBar } from './Component/VisitorNavigationBar'
-
-function App() {
-
-
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { Home } from './Pages/Home'
+import { Contactus } from './Pages/Contactus'
+const App=()=>{
   return (
     <>
-      <VisitorNavigationBar/>
+      <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/contact-us" element={<Contactus/>} />
+        </Routes>
+      </div>
+      </Router>
     </>
   )
 }
